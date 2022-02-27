@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import 'antd/dist/antd.css';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
+import { HomeMain } from './components/home/homeMain/homeMain';
+import { HomeUser } from './components/home/homeUser/homeUser';
+import { InformationUser } from './components/home/homeUser/informationUser/informationUser';
+import { PendingAppointment } from './components/home/homeUser/informationUser/pendingAppointment';
+import { LoginForm } from './components/loginUser/loginUser';
+import { NavBar } from './components/Navbar/NavBar';
+import { RegisterForm } from './components/registerUser/registerUser';
+import { RequestService } from './components/requestService/requestService';
+import { ServiceUser } from './components/servicesUser/serviceUser';
+import { AppRoutes } from './routes/AppRoutes';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppRoutes />
+      {/* <NavBar/> */}
+      {/* <LoginForm /> */}
+      {/* <HomeMain /> */}
+      {/* <InformationUser /> */}
+      {/* <PendingAppointment /> */}
+      {/* <HomeUser /> */}
+      {/* <RequestService /> */}
+      {/* <ServiceUser /> */}
     </div>
   );
 }

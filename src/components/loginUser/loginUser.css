@@ -1,0 +1,16 @@
+body {
+    background-color: #002766
+}
+
+.login_center{
+    display: flex;
+    width: 500px;
+    height: 400px;
+    margin-left: 35%;
+    margin-top: 100px;
+    flex-direction: column;
+    background: white;
+    border-radius: 10px;
+    border-style: outset;
+    border-color: white
+}

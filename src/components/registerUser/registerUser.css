@@ -1,0 +1,17 @@
+.Container_form_img{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    margin: 60px
+}
+
+.Container_register{
+    display: flex;
+    width: 550px;
+    height: 500px;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    border-style: outset;
+    border-color: white
+}

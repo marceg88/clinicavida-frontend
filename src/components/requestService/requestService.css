@@ -1,0 +1,36 @@
+body{
+    font-size: 1rem;
+}
+h1{
+    color: white;
+    
+}
+
+.container_image_form{
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    margin: 80px;
+    color: white;
+}
+.service_container {
+    display: flex;
+    width: 400px;
+    height: 500px;
+    flex-direction: column;
+    margin-top: 120px;
+    /* margin-left: 35%; */
+    color: white;
+    font-size: 1.5rem;
+}
+[title="Selecciona el servicio"] {
+    color: white !important;
+    font-size: 1rem !important;
+  }
+  
+  [title="Selecciona fecha"] {
+    color: white !important;
+    font-size: 1rem !important;
+  }
