@@ -23,10 +23,18 @@ const headerDelete = {
 export const ReactAPI = {
     //* USER REQUESTS */
     async signUp(data) {
+        let url;
+        if (data.avatar_url) {
+            const uploadImageResponse = await MyLittleFriendAPI.uploadFile(data.avatar_url);
+            url = uploadImageResponse;
+        }
         const response = await fetch(`${API}/customers`, {
             method: 'POST',
             headers: headerPost,
-            body: JSON.stringify(data)
+            body: JSON.stringify({
+                ...data,
+                avatar_url: url
+            })
         });
 
         const json = await response.json();
@@ -102,6 +110,18 @@ export const ReactAPI = {
         });
         const serviceDeleted = await response.json();
         return serviceDeleted;
+    },
+    //* UPLOAD FILES REQUESTS */
+    async uploadFile(file) {
+        const formData = new FormData();
+        formData.append('image', file);
+
+        const response = await fetch(`${API}/upload/file`, {
+            method: 'POST',
+            body: formData
+        });
+        const json = await response.json();
+        return json.data.url;
     },
     //pagos
     async registerCard(data) {

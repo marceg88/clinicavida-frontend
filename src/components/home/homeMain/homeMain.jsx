@@ -1,7 +1,7 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import './homeMain.css'
-import { Carousel, Row, Col, Card, Button } from 'antd';
+import { Carousel, Row, Col, Card, Button, Image } from 'antd';
 import { Content, Footer } from 'antd/lib/layout/layout';
 import { Link } from 'react-router-dom';
 import { selectUser } from '../../../store/userSlice/userSlice';
@@ -14,16 +14,16 @@ export const HomeMain = () => {
         <div>
              <Carousel className='contentStyle' autoplay>
                 <div>
-                    <h3>1</h3>
+                <h3><Image style={{width: 800, height: 300}} src="https://i.pinimg.com/564x/fd/75/c3/fd75c30daa24046520cca39d8d517929.jpg"></Image></h3>
                 </div>
                 <div>
-                    <h3>2</h3>
+                    <h3><Image style={{width: 800, height: 300}} src="https://i.pinimg.com/564x/b2/db/92/b2db92ea5db352e910fcf7da2a6ac8f4.jpg"></Image></h3>
                 </div>
                 <div>
-                    <h3>3</h3>
+                    <h3><Image style={{width: 800, height: 300}} src='https://i.pinimg.com/564x/11/72/99/117299cac9663cabf16d2ba3adef87bd.jpg'></Image></h3>
                 </div>
                 <div>
-                    <h3>4</h3>
+                    <h3><Image style={{width: 800, height: 300}} src="https://i.pinimg.com/564x/79/0d/04/790d04355a61b3a40e9ad28fd71ea4fd.jpg"></Image></h3>
                 </div>
             </Carousel>
             <Content style={{backgroundColor: "#002766", height: "550px"}}>
