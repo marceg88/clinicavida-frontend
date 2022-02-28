@@ -86,13 +86,13 @@ export const userSlice = createSlice({
                 console.log(action.payload);
 
                 if (action.payload.status === 'Failed') {
-                    state.signUpState.message = 'Este email ya ha sido registrado 😔.';
+                    state.signUpState.message = 'Este email ya ha sido registrado.';
                     state.signUpState.status = 'Failed';
                     return;
                 }
 
                 if (action.payload.status === 'OK') {
-                    state.signUpState.message = 'Usuario registrado con éxito. Porfavor revise su email para confirmarlo 😊.';
+                    state.signUpState.message = 'Usuario registrado con éxito. Porfavor revise su email para confirmarlo.';
                     state.signUpState.status = 'OK';
                     return;
                 }
@@ -113,7 +113,7 @@ export const userSlice = createSlice({
 
                 if (action.payload.status === 'Failed') {
                     state.user = null;
-                    state.signInState.message = 'Su cuenta no ha sido verificada o email/contraseña incorrectos. Porfavor intente otra vez 😔.';
+                    state.signInState.message = 'Su cuenta no ha sido verificada o email/contraseña incorrectos.';
                     state.signInState.status = 'Failed'
                     return;
                 }
@@ -142,12 +142,12 @@ export const userSlice = createSlice({
 
                 if (action.payload.status === 'Failed') {
                     state.verifyEmailState.status = 'Failed';
-                    state.verifyEmailState.message = 'Ocurrió un error al verificar tu cuenta 😔.';
+                    state.verifyEmailState.message = 'Ocurrió un error al verificar tu cuenta.';
                 }
 
                 if (action.payload.status === 'OK') {
                     state.verifyEmailState.status = 'OK';
-                    state.verifyEmailState.message = 'Tu cuenta ha sido verificada 😊.';
+                    state.verifyEmailState.message = 'Tu cuenta ha sido verificada.';
                 }
                 console.log(action.payload)
             })
@@ -165,7 +165,7 @@ export const userSlice = createSlice({
                 console.log(action.payload)
 
                 if (action.payload.status === 'Failed') {
-                    state.getServicesState.message = 'Los pets no puedieron ser listados. Porfavor intente otra vez 😔.';
+                    state.getServicesState.message = 'Los services no puedieron ser listados. Porfavor intente otra vez 😔.';
                     state.getServicesState.status = 'Failed'
                 }
 
@@ -174,7 +174,7 @@ export const userSlice = createSlice({
                 }
 
                 if (action.payload.status === 'OK') {
-                    state.user.pets = action.payload.data;
+                    state.user.services = action.payload.data;
                     return;
                 }
             })

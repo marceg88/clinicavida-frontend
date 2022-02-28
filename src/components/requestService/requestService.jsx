@@ -14,23 +14,7 @@ export const RequestService = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const {id: patient, full_name} = useSelector(selectUser)
-    // const { loading, message, status } = useSelector(selectRegisterServiceState);
-    const {status} = 'OK'
-    const [visible, setVisible] = useState(false) 
-
-    const showModal = () => {
-        setVisible(true)
-    };
-
-    const handleOk = e => {
-        console.log(e);
-        setVisible(false)
-    };
-
-    const handleCancel = e => {
-        console.log(e);
-        setVisible(false)
-    };
+    const { loading, message, status } = useSelector(selectRegisterServiceState); 
     
     const onFinish = (values) => {
         const data = {
@@ -103,34 +87,21 @@ export const RequestService = () => {
                             placeholder="Fecha de la cita"
                         />
                     </Form.Item>
-                    
+                    <p className='error-message mb-2'>{message}</p>
                     <Form.Item 
                         
                         wrapperCol={{
                             span: 24,
                         }}
                     >
-                        <Button style={{marginLeft: "120px"}} type="primary" htmlType="submit" onClick={showModal}>
+                        <Button style={{marginLeft: "120px"}} type="primary" htmlType="submit" >
                             AGENDAR
                         </Button>
-                        <Modal
-                            title="Basic Modal"
-                            visible={visible}
-                            onOk={handleOk}
-                            onCancel={handleCancel}
-                            okButtonProps={{ disabled: false }}
-                            cancelButtonProps={{ disabled: false }}
-                            >
-                            <p>{full_name}</p>
-                            <p>Su cita fue programada con exito.</p>
-                            
-                            
-                        </Modal>
                         <Link to="/user"><i style={{marginLeft: "100px"}}><SwapLeftOutlined /> Ir al perfil </i></Link>
                     </Form.Item>
                 </Form>
             </div>
-            <Image style={{width: "450px"}} src="https://i.pinimg.com/236x/5e/c7/0b/5ec70b39ee7bcb01a99e349982d73345.jpg">
+            <Image style={{width: "450px"}} src="https://i.pinimg.com/564x/6a/a1/14/6aa11421e1a46d63f3b5b60604808dd5.jpg">
                     
             </Image>
         </div>

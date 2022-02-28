@@ -15,6 +15,7 @@ import { PublicRoutes } from './PublicRoutes'
 import { CardServices } from '../components/servicesUser/cardServices'
 import { CardRegisterForm } from '../components/payments/paymentForm/cardRegisterForm/cardRegisterForm'
 import { RegisterPaymentForm } from '../components/payments/paymentForm/registerPaymentForm/registerPaymentForm'
+import { FooterApli } from '../components/footer/footer'
 
 export const AppRoutes = () => {
     const user = useSelector(selectUser)
@@ -47,6 +48,9 @@ export const AppRoutes = () => {
                 </Routes>
                 
             </main>    
+            <footer>
+                <FooterApli />
+            </footer>
                     
                
         </BrowserRouter>

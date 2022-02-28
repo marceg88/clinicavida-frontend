@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
-
+import '../requestService/requestService.css'
 import { selectUser } from "../../store/userSlice/userSlice";
 import { getServiceById, resetServiceMethodsMessage, selectService, selectUpdateServiceState, updateServiceById } from "../../store/serviceSlice/serviceSlice";
 import { Form, Select, DatePicker, Button, Image } from "antd"
@@ -12,9 +12,10 @@ export const EditService = () => {
     const navigate = useNavigate();
     const { serviceId } = useParams();
     const {id: patient, full_name} = useSelector(selectUser)
-    const service = useSelector(selectService);
+    const services = useSelector(selectUser);  
+    // const {name} = services.name
     const { loading, status, message } = useSelector(selectUpdateServiceState);
-
+    console.log(services)
     useEffect(() => {
         dispatch(getServiceById(serviceId))
     }, [dispatch, serviceId]);
@@ -62,7 +63,7 @@ export const EditService = () => {
                     <Form.Item 
                         label="Selecciona el servicio"
                         name="name"
-                        initialValue={service?.name}
+                        initialValue={services.name}
                         rules={[
                             {
                                 required:true,
@@ -94,7 +95,7 @@ export const EditService = () => {
                             placeholder="Fecha de la cita"
                         />
                     </Form.Item>
-                    
+                    <p className='error-message mb-2'>{message}</p>
                     <Form.Item 
                         
                         wrapperCol={{
@@ -107,22 +108,11 @@ export const EditService = () => {
                 </Form>
             </div>
             <div>
-            <Carousel autoplay>
-                <div>
-                    <h3 style={contentStyle}>1</h3>
-                </div>
-                <div>
-                    <h3 style={contentStyle}>2</h3>
-                </div>
-                <div>
-                    <h3 style={contentStyle}>3</h3>
-                </div>
-                <div>
-                    <h3 style={contentStyle}>4</h3>
-                </div>
-            </Carousel>   
+               
             </div>
-            
+            <Image style={{width: "500px"}} src="https://i.pinimg.com/564x/22/c2/81/22c28174cfa1b7f9318c0456607b7f9a.jpg">
+                    
+            </Image>
         </div>
     )
 }

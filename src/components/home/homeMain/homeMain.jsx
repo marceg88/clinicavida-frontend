@@ -49,15 +49,7 @@ export const HomeMain = () => {
                     </Col>
                 </Row>
             </Content>
-            <Footer style={{backgroundColor: "#d9d9d9"}}>
-                <div>
-                    CLINICA VIDA SANA
-                </div>
-                <div>
-                    DIRECCIÓN: CALLE 87 # 31- 80 MEDELLÍN-ANTIOQUIA 
-                </div>
-                
-            </Footer>
+           
         </div>
     )
 }

@@ -8,7 +8,7 @@
 .Container_register{
     display: flex;
     width: 550px;
-    height: 500px;
+    height: 550px;
     flex-direction: column;
     background-color: white;
     border-radius: 10px;

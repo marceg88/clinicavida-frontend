@@ -33,7 +33,7 @@ export const HomeUser = () => {
                 <div className="container_info">
                     <InformationUser data={full_name}/>
                 </div>
-                <PendingAppointment />
+                <PendingAppointment />   
             </div>
         </div>
         

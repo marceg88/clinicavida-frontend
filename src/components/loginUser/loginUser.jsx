@@ -22,7 +22,7 @@ export const LoginForm = () => {
         dispatch(signIn({ email, password }))
         
     };
-
+  
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };

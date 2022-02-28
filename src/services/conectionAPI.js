@@ -23,17 +23,12 @@ const headerDelete = {
 export const ReactAPI = {
     //* USER REQUESTS */
     async signUp(data) {
-        let url;
-        if (data.avatar_url) {
-            const uploadImageResponse = await MyLittleFriendAPI.uploadFile(data.avatar_url);
-            url = uploadImageResponse;
-        }
+        
         const response = await fetch(`${API}/customers`, {
             method: 'POST',
             headers: headerPost,
             body: JSON.stringify({
-                ...data,
-                avatar_url: url
+                ...data
             })
         });
 

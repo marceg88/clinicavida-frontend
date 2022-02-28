@@ -19,7 +19,7 @@ export const PendingAppointment = () =>{
     const dispatch = useDispatch();
     const user = useSelector(selectUser);
     const userId = user.id;
-    const services = user.pets
+    const services = user.services
     // const id = services._id
     console.log('services', services)
     

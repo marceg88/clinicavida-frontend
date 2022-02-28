@@ -6,6 +6,8 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import {
   LogoutOutlined,
+  FacebookOutlined ,
+  InstagramOutlined
 } from '@ant-design/icons'; 
 const { Header } = Layout;
 
@@ -24,7 +26,10 @@ export const NavBar = () => {
               >
                 <Menu.Item key={1}><Link to="/">INICIO</Link></Menu.Item>
                 <Menu.Item key={2}><Link to="/services">SERVICIOS</Link></Menu.Item>
-                <Menu.Item key={3}><Link to="/notices">NOTICIAS</Link></Menu.Item>
+                <Menu.Item>
+                  <FacebookOutlined />
+                  <InstagramOutlined />
+                </Menu.Item>
                 {!user ?
                 (<Menu.Item>
                   
@@ -43,6 +48,7 @@ export const NavBar = () => {
                 
                 )
                 }
+                
               </Menu>
             
           </Header>
